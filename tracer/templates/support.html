@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support — Air, Sea, Road & Warehousing</title>
+  <meta name="description" content="Support center for air, sea, road and warehousing freight. Claims, hotlines, FAQs and downloadable forms."/>
+  <style>
+    :root{--accent:#0b6efd;--bg:#f6f8fb;--card:#fff;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, Arial;background:var(--bg);color:#0b1220}
+    .container{max-width:1000px;margin:28px auto;padding:20px}
+    h1,h2,h3{margin:0 0 12px}
+    .grid{display:grid;grid-template-columns:280px 1fr;gap:18px}
+    .sidebar{background:var(--card);padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(11,14,20,0.04)}
+    .content{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(11,14,20,0.04)}
+    .btn{display:block;padding:10px 12px;border-radius:8px;border:0;background:transparent;text-align:left;cursor:pointer;font-weight:600}
+    .btn.active{background:rgba(11,110,253,0.08)}
+    .support-panel{display:none}
+    .card{padding:12px;border-radius:8px;background:#fbfdff;margin-bottom:12px}
+    input,textarea,select{width:100%;padding:10px;border-radius:8px;border:1px solid #eef3fb;margin-bottom:8px}
+    button.primary{background:var(--accent);color:#fff;padding:10px 12px;border-radius:8px;border:0;cursor:pointer}
+    details{margin-bottom:8px}
+    @media (max-width:780px){.grid{grid-template-columns:1fr}.sidebar{order:2}.content{order:1}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+      <div>
+        <h1>Bravo Support Center</h1>
+        <p style="color:var(--muted)">Help and resources for Air, Sea, Road and Warehousing shipments. Submit claims, download forms, or contact a desk directly.</p>
+      </div>
+      <div style="text-align:right">
+        <strong>24/7 Hotline:</strong><br>
+        +254 712 000 000
+      </div>
+    </header>
+
+    <div class="grid">
+      <aside class="sidebar">
+        <button class="btn active" data-target="air">✈️ Air Freight Support</button>
+        <button class="btn" data-target="sea">🚢 Sea Freight Support</button>
+        <button class="btn" data-target="road">🚚 Road Freight Support</button>
+        <button class="btn" data-target="ware">📦 Warehousing & Fulfillment</button>
+        <button class="btn" data-target="claims">🧾 Claims & Insurance</button>
+        <hr style="border:none;border-top:1px solid #eef3fb;margin:12px 0">
+        <div style="font-size:14px;color:var(--muted)">
+          <strong>Quick links</strong>
+          <ul style="padding-left:16px;margin:8px 0 0;color:var(--muted)">
+            <li><a href="#">BL / AWB Request</a></li>
+            <li><a href="#">Submit Documents</a></li>
+            <li><a href="#">Download Forms</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="content">
+        <div id="air" class="support-panel" style="display:block">
+          <h2>Bravo Air Freight Support</h2>
+          <p style="color:var(--muted)">Assistance with AWB retrieval, temperature-controlled cargo, priority handling, and customs requirements for air shipments.</p>
+          <div class="card">
+            <strong>Air Desk</strong>
+            <p style="color:var(--muted);margin:6px 0">Bravoairsupport@shippingcompany.com | +254 700 111 222</p>
+            <ul style="color:var(--muted)">
+              <li>AWB copies & documentation</li>
+              <li>Flight options & consolidation</li>
+              <li>Temperature-sensitive cargo handling</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="sea" class="support-panel">
+          <h2>Bravo Sea Freight Support</h2>
+          <p style="color:var(--muted)">FCL & LCL bookings, Bill of Lading (BL) copies, vessel schedules, container tracking, and demurrage queries.</p>
+          <div class="card">
+            <strong>Sea Desk</strong>
+            <p style="color:var(--muted);margin:6px 0">Bravoseafreight@shippingcompany.com | +254 700 333 444</p>
+            <ul style="color:var(--muted)">
+              <li>BL release & documentation</li>
+              <li>Container status & vessel ETA</li>
+              <li>Demurrage & port queries</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="road" class="support-panel">
+          <h2>Bravo Road Freight Support</h2>
+          <p style="color:var(--muted)">Truck tracking, cross-border permits, route planning, and proof of delivery (POD) retrieval for road shipments.</p>
+          <div class="card">
+            <strong>Road Desk</strong>
+            <p style="color:var(--muted);margin:6px 0">Bravoroad@shippingcompany.com | +254 700 555 666</p>
+            <ul style="color:var(--muted)">
+              <li>FTL & LTL scheduling</li>
+              <li>Cross-border customs support</li>
+              <li>Last-mile delivery assistance</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="ware" class="support-panel">
+          <h2>Bravo Warehousing & Fulfillment</h2>
+          <p style="color:var(--muted)">Inventory reports, pick & pack, kitting, and integrations with e-commerce platforms for fulfillment services.</p>
+          <div class="card">
+            <strong>Warehouse Desk</strong>
+            <p style="color:var(--muted);margin:6px 0">Bravowarehousing@shippingcompany.co | +254 700 777 888</p>
+            <ul style="color:var(--muted)">
+              <li>Stock & cycle counts</li>
+              <li>Pick & pack & value-added services</li>
+              <li>Marketplace & fulfillment integrations</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="claims" class="support-panel">
+          <h2>Bravo Claims & Insurance</h2>
+          <p style="color:var(--muted)">Report loss or damage; submit photos, invoices and carrier documents. Follow the claim steps and submit the form below.</p>
+          <div class="card">
+            <strong>Claims Desk</strong>
+            <p style="color:var(--muted);margin:6px 0">Bravo@shippingcompany.com</p>
+            <ol style="color:var(--muted)">
+              <li>Notify within 7 days for visible damage (sea/road) or 3 days for concealed damage (air).</li>
+              <li>Collect evidence: photos, packing list, invoices.</li>
+              <li>Submit claim form and supporting docs.</li>
+            </ol>
+          </div>
+
+          <h3>Submit a Claim</h3>
+          <form id="claimForm" onsubmit="event.preventDefault(); alert('Claim submitted — our team will contact you.');">
+            <input name="ref" placeholder="Booking / BL / AWB number" required />
+            <input name="email" type="email" placeholder="Your email" required />
+            <input name="phone" placeholder="Contact phone" />
+            <textarea name="desc" placeholder="Describe the issue and list attachments"></textarea>
+            <button class="primary" type="submit">Submit Claim</button>
+          </form>
+        </div>
+
+        <hr style="margin:18px 0;border:none;border-top:1px solid #eef3fb" />
+
+        <section>
+          <h3>FAQs</h3>
+          <details>
+            <summary>How do I request a BL or AWB copy?</summary>
+            <p style="color:var(--muted)">Email the relevant desk with your booking number and we will email documents within 24 hours.</p>
+          </details>
+          <details>
+            <summary>What are transit times?</summary>
+            <p style="color:var(--muted)">Air: 1–7 days, Sea: 10–45 days, Road: varies by route. Exact ETA provided per booking.</p>
+          </details>
+          <details>
+            <summary>How long to file a claim?</summary>
+            <p style="color:var(--muted)">File within 7 days for visible damage or 3 days for concealed damage depending on cargo type and carrier terms.</p>
+          </details>
+        </section>
+
+      </main>
+    </div>
+
+  </div>
+
+  <script>
+    // sidebar button navigation
+    document.querySelectorAll('.sidebar .btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.sidebar .btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const target = btn.dataset.target;
+        document.querySelectorAll('.support-panel').forEach(panel=>panel.style.display='none');
+        const el = document.getElementById(target);
+        if(el) el.style.display = 'block';
+        window.scrollTo({top:0,behavior:'smooth'});
+      });
+    });
+  </script>
+</body>
+</html>
+
+</body>
+</html>

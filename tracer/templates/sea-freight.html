@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sea Freight — Reliable Ocean Shipping</title>
+  <meta name="description" content="Sea freight services — FCL, LCL, project cargo, container tracking, and customs clearance." />
+  <style>
+    :root{--accent:#0b9248;--muted:#6b7280;--card:#ffffff}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; margin:0; color:#0f172a; background:#f6fbf8}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .mark{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav a{margin-left:18px;color:var(--muted);text-decoration:none}
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;margin-top:18px}
+    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 4px 18px rgba(12,16,20,0.06)}
+    h1{font-size:28px;margin:0 0 10px}
+    p.lead{color:var(--muted);margin:0 0 16px}
+    .cta{display:flex;gap:10px;align-items:center}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;border:none;cursor:pointer}
+    .ghost{background:transparent;border:1px solid #e6edf9;padding:10px 14px;border-radius:8px;cursor:pointer}
+    input[type=text],input[type=email],select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ee}
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .small{font-size:13px;color:var(--muted)}
+    section{margin-top:28px}
+    footer{margin-top:40px;padding:18px 0;border-top:1px solid #eef7ef;color:var(--muted)}
+    @media(max-width:880px){.hero{grid-template-columns:1fr}.container{padding:16px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="mark">SF</div>
+        <div>
+          <strong>SeaFreight</strong>
+          <div class="small">Ocean freight & logistics</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#schedules">Schedules</a>
+        <a href="#rates">Rates</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div>
+          <div class="card">
+            <h1>Efficient ocean shipping — FCL, LCL & project cargo</h1>
+            <p class="lead">Door-to-door and port-to-port sea freight with container tracking, consolidation services, and customs brokerage across major trade lanes.</p>
+            <div class="cta">
+              <button class="btn" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">Request a quote</button>
+              <button class="ghost" onclick="document.getElementById('tracking').scrollIntoView({behavior:'smooth'})">Track container</button>
+            </div>
+            <div style="margin-top:14px" class="small">
+              <strong>Typical transit</strong> — East Asia to Europe: 28–35 days · East Asia to East Africa: 21–28 days
+            </div>
+          </div>
+
+          <section id="services">
+            <h2>Services</h2>
+            <div class="grid-3">
+              <div class="card"><h3>FCL (Full Container Load)</h3><p class="small">20', 40', and 40' HQ containers with door pickup and delivery options.</p></div>
+              <div class="card"><h3>LCL (Less than Container Load)</h3><p class="small">Consolidation services for small shipments with competitive rates.</p></div>
+              <div class="card"><h3>Project & Oversized Cargo</h3><p class="small">Breakbulk, RO-RO, and heavy lift solutions with specialist handling.</p></div>
+              <div class="card"><h3>Customs & Compliance</h3><p class="small">Import/export documentation, duties, and local clearance handled end-to-end.</p></div>
+              <div class="card"><h3>Warehousing & Distribution</h3><p class="small">Short-term storage, fulfilment, and last-mile logistics.</p></div>
+              <div class="card"><h3>Insurance</h3><p class="small">Cargo insurance options for marine and inland legs.</p></div>
+            </div>
+          </section>
+
+        </div>
+
+        <aside>
+          <div id="tracking" class="card">
+            <h3>Track Container</h3>
+            <form onsubmit="event.preventDefault();trackContainer()">
+              <input type="text" id="containerInput" placeholder="Enter container number (e.g. ABCU1234567)" required />
+              <div style="margin-top:10px;display:flex;gap:8px"><button class="btn">Track</button><button type="button" class="ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request help</button></div>
+            </form>
+            <div id="trackResult" class="small" style="margin-top:12px"></div>
+          </div>
+
+          <div class="card" style="margin-top:14px">
+            <h3 id="quote">Quick Quote</h3>
+            <form onsubmit="event.preventDefault();getQuote()">
+              <label class="small">From (port or city)</label>
+              <input type="text" id="origin" placeholder="e.g. Shanghai, CN" required />
+              <label class="small">To (port or city)</label>
+              <input type="text" id="destination" placeholder="e.g. Mombasa, KE" required />
+              <label class="small">Cargo weight (kg)</label>
+              <input type="text" id="weight" placeholder="e.g. 1200" required />
+              <label class="small">Container type</label>
+              <select id="ctype"><option>20' GP</option><option>40' GP</option><option>40' HQ</option><option>Other</option></select>
+              <div style="margin-top:10px;display:flex;gap:8px">
+                <button class="btn">Estimate</button>
+                <button type="button" class="ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact agent</button>
+              </div>
+            </form>
+            <div id="quoteResult" class="small" style="margin-top:12px"></div>
+          </div>
+        </aside>
+      </div>
+
+      <section id="schedules" class="card">
+        <h2>Sample Schedules</h2>
+        <p class="small">Weekly sailings on major trade lanes. Contact us for exact vessel dates.</p>
+        <table style="width:100%;border-collapse:collapse;margin-top:12px">
+          <thead>
+            <tr style="text-align:left;color:var(--muted)"><th>Route</th><th>Frequency</th><th>Transit (est.)</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Shanghai → Rotterdam</td><td>Weekly</td><td>28–35 days</td><td>Port rotation: Shanghai, Ningbo, Yantian, Rotterdam</td></tr>
+            <tr><td>Shanghai → Mombasa</td><td>Bi-weekly</td><td>21–28 days</td><td>Transshipment at Dubai</td></tr>
+            <tr><td>Dubai → Durban</td><td>Weekly</td><td>10–14 days</td><td>Direct service</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="rates" class="card">
+        <h2>Indicative Rates</h2>
+        <p class="small">Rates are sample estimates. Final charges depend on container type, surcharges, and destination fees.</p>
+        <div class="grid-3" style="margin-top:12px">
+          <div class="card"><strong>Shanghai → Rotterdam</strong><div class="small">From USD 1200 / 20' container (est.)</div></div>
+          <div class="card"><strong>Shanghai → Mombasa</strong><div class="small">From USD 1400 / 20' container (est.)</div></div>
+          <div class="card"><strong>Dubai → Durban</strong><div class="small">From USD 800 / 20' container (est.)</div></div>
+        </div>
+      </section>
+
+      <section id="contact" class="card">
+        <h2>Contact & Booking</h2>
+        <form  method="post" onsubmit="event.preventDefault();submitContact()">
+            {% csrf_token %}
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <input type="text" id="name" placeholder="Your name" required name="name" />
+            <input type="email" id="email" placeholder="Email" required name="email" />
+          </div>
+          <input type="text" id="company"  name="company" placeholder="Company (optional)" style="margin-top:10px" />
+          <textarea id="message"  name="message" rows="4" placeholder="Cargo details, preferred sailing, pickup/port info" style="margin-top:10px"></textarea>
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <button class="btn">Send booking request</button>
+            <button type="reset" class="ghost">Reset</button>
+          </div>
+        </form>
+        <div id="contactResult" class="small" style="margin-top:12px"></div>
+      </section>
+
+      <section class="card">
+        <h2>FAQ</h2>
+        <div class="small">
+          <strong>What is FCL vs LCL?</strong>
+          <p>FCL = full container load. LCL = consolidation of multiple shippers in one container.</p>
+          <strong>How are transit times calculated?</strong>
+          <p>Transit includes sea voyage only; allow additional days for port handling and customs clearance.</p>
+          <strong>Do you provide inland transport?</strong>
+          <p>Yes — we can arrange truck pickup and delivery to/from port.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div class="small">©Bravo SeaFreight • Safe ocean shipping</div>
+        <div class="small">Support: Bravo@seafreight.example</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function trackContainer(){
+      const id = document.getElementById('containerInput').value.trim();
+      const out = document.getElementById('trackResult');
+      if(!id){out.textContent='Please enter a container number.';return}
+      out.textContent = 'Checking container ' + id + '...';
+      setTimeout(()=>{out.innerHTML = '<strong>Status:</strong> At sea<br><strong>Last port:</strong> Departed Singapore';},600);
+    }
+
+    function getQuote(){
+      const o = document.getElementById('origin').value.trim();
+      const d = document.getElementById('destination').value.trim();
+      const w = parseFloat(document.getElementById('weight').value)||0;
+      const out = document.getElementById('quoteResult');
+      if(!o||!d||w<=0){out.textContent='Please fill origin, destination and a valid weight.';return}
+      const base = 0.9; // sample USD per kg for sea
+      const est = (base * w).toFixed(2);
+      out.innerHTML = 'Estimated ocean freight: <strong>USD ' + est + '</strong> (approx)';
+    }
+
+    function submitContact(){
+      const out = document.getElementById('contactResult');
+      out.textContent = 'Submitting...';
+      setTimeout(()=>{out.textContent = 'Thanks — your booking request was received. Our agent will contact you within 1 business day.'},800);
+    }
+  </script>
+</body>
+</html>

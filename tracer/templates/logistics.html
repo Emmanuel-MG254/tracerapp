@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Logistics Solutions — Quick Transport & Global Freight</title>
+  <meta name="description" content="Reliable sea, air and road freight. Door-to-door shipping, tracking, and customs clearance."/>
+  <style>
+    :root{--accent:#0b6efd;--dark:#0b1220;--muted:#6b7280;--card:#ffffff;--bg:#f6f8fb}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:var(--dark);background:var(--bg);line-height:1.5}
+    a{color:var(--accent);text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    header{background:#fff;padding:18px 0;box-shadow:0 2px 6px rgba(9,30,66,0.06);}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:46px;height:46px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    nav{margin-left:auto}
+    nav a{margin-left:18px;color:var(--dark);font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:36px 0}
+    .hero h1{font-size:28px;margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:12px}
+    .btn{padding:12px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-ghost{background:transparent;border:1px solid rgba(11,14,20,0.06)}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(11,14,20,0.06)}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}
+    .service{padding:18px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(11,14,20,0.03)}
+    .service h3{margin:8px 0 6px}
+    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}
+    .feature{display:flex;gap:12px;align-items:flex-start}
+    .steps{display:flex;gap:12px;margin:20px 0}
+    .step{flex:1;padding:12px;border-radius:10px;background:#fff;border:1px solid rgba(11,14,20,0.03)}
+    form{display:flex;flex-direction:column;gap:10px}
+    input,select,textarea{padding:12px;border-radius:8px;border:1px solid #e6eef8}
+    textarea{min-height:120px}
+    footer{padding:28px 0;color:var(--muted);font-size:14px;margin-top:36px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media (max-width:980px){.hero{grid-template-columns:1fr;}.services{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center;">
+      <div class="brand">
+        <div class="logo">LT</div>
+        <div>
+          <strong>QuickTransport</strong><br>
+          <small style="color:var(--muted)">Logistics & Freight Solutions</small>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#how">How it works</a>
+        <a href="#quote">Get Quote</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Reliable logistics for sea, air and road — worldwide.</h1>
+        <p>Door-to-door shipping, customs clearance, warehousing and real-time tracking. Tailored solutions for e-commerce, manufacturers and freight forwarders.</p>
+        <div class="cta">
+          <button class="btn btn-primary">Request a Free Quote</button>
+          <button class="btn btn-ghost">Talk to Sales</button>
+        </div>
+
+        <div class="card" style="margin-top:20px">
+          <strong>Why choose us</strong>
+          <div class="features">
+            <div class="feature">
+              <div style="width:40px;height:40px;border-radius:8px;background:#eef8ff;display:flex;align-items:center;justify-content:center">🚚</div>
+              <div>
+                <div style="font-weight:700">Multimodal Transport</div>
+                <div style="color:var(--muted);font-size:13px">Sea, air, and road optimized to save cost & time.</div>
+              </div>
+            </div>
+
+            <div class="feature">
+              <div style="width:40px;height:40px;border-radius:8px;background:#eef8ff;display:flex;align-items:center;justify-content:center">🧾</div>
+              <div>
+                <div style="font-weight:700">Customs & Compliance</div>
+                <div style="color:var(--muted);font-size:13px">Experienced clearance agents in major ports and airports.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <strong>Quick Quote</strong>
+        <form id="quoteForm" action="#" onsubmit="event.preventDefault(); alert('Quote requested — we will contact you.');">
+          <input type="text" name="name" placeholder="Company / Full name" required />
+          <input type="email" name="email" placeholder="Email address" required />
+          <select name="service">
+            <option value="air">Air Freight</option>
+            <option value="sea">Sea Freight</option>
+            <option value="road">Road Freight</option>
+            <option value="warehousing">Warehousing</option>
+          </select>
+          <input type="text" name="origin" placeholder="Origin (City, Country)" />
+          <input type="text" name="destination" placeholder="Destination (City, Country)" />
+          <textarea name="details" placeholder="Cargo details (weight, dimensions, value)"></textarea>
+          <button class="btn btn-primary" type="submit">Send Request</button>
+        </form>
+      </aside>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="services">
+        <div class="service">
+          <div style="font-size:22px">✈️</div>
+          <h3>Air Freight</h3>
+          <p style="color:var(--muted);font-size:14px">Fastest door-to-door delivery for time-sensitive shipments, with airport-to-airport and door-to-door options.</p>
+          <ul style="color:var(--muted);font-size:13px;margin:8px 0 0">
+            <li>Priority & deferred air services</li>
+            <li>Temperature controlled handling</li>
+            <li>Consolidation & deconsolidation</li>
+          </ul>
+        </div>
+
+        <div class="service">
+          <div style="font-size:22px">🚢</div>
+          <h3>Sea Freight</h3>
+          <p style="color:var(--muted);font-size:14px">Full Container Load (FCL) & Less than Container Load (LCL) options with major carrier partnerships.</p>
+          <ul style="color:var(--muted);font-size:13px;margin:8px 0 0">
+            <li>FCL & LCL solutions</li>
+            <li>Port-to-door transit</li>
+            <li>Breakbulk and project cargo handling</li>
+          </ul>
+        </div>
+
+        <div class="service">
+          <div style="font-size:22px">🚚</div>
+          <h3>Road Freight</h3>
+          <p style="color:var(--muted);font-size:14px">Regional and cross-border trucking with trackable shipments and flexible scheduling.</p>
+          <ul style="color:var(--muted);font-size:13px;margin:8px 0 0">
+            <li>FTL and LTL options</li>
+            <li>Cross-border customs support</li>
+            <li>Last-mile delivery</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <h2>How it works — 3 simple steps</h2>
+      <div class="steps">
+        <div class="step">
+          <strong>1. Request a Quote</strong>
+          <p style="color:var(--muted);font-size:13px;margin:8px 0 0">Tell us origin, destination and cargo details. We’ll recommend the best route and price.</p>
+        </div>
+        <div class="step">
+          <strong>2. Pickup & Transit</strong>
+          <p style="color:var(--muted);font-size:13px;margin:8px 0 0">We handle pickup, consolidation, and secure transport using trusted carriers.</p>
+        </div>
+        <div class="step">
+          <strong>3. Delivery & Support</strong>
+          <p style="color:var(--muted);font-size:13px;margin:8px 0 0">Customs clearance, delivery and on-demand support until the shipment reaches its final destination.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:18px">
+      <div class="grid-2">
+        <div class="card">
+          <h3>Tracking & Visibility</h3>
+          <p style="color:var(--muted);font-size:14px">Real-time shipment updates, ETA notifications and downloadable documents (BL, AWB, invoices).</p>
+          <div style="margin-top:12px">
+            <input id="track" placeholder="Enter tracking number" style="width:70%;display:inline-block" />
+            <button class="btn btn-primary" onclick="alert('Tracking lookup: ' + document.getElementById('track').value)">Track</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Warehousing & Fulfillment</h3>
+          <p style="color:var(--muted);font-size:14px">Short-term and long-term storage, pick & pack, and ecommerce fulfillment services integrated with major marketplaces.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:20px">
+      <h2>Contact & Support</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h4>Head Office</h4>
+          <p style="margin:6px 0;color:var(--muted)">Likoni Road, Nairobi 00500, Kenya</p>
+          <p style="margin:6px 0;color:var(--muted)"><strong>Email:</strong> bravoshipping@company.com</p>
+          <p style="margin:6px 0;color:var(--muted)"><strong>Phone:</strong> +254 712 000 000</p>
+        </div>
+
+        <div class="card">
+          <h4>Send us a message</h4>
+          <form action="#" onsubmit="event.preventDefault(); alert('Thanks — we will reply soon');">
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Your email" required />
+            <input type="text" name="subject" placeholder="Subject" />
+            <textarea name="message" placeholder="Message"></textarea>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          © <strong>QuickTransport</strong> — Trusted logistics since 2010
+        </div>
+        <div style="color:var(--muted)">
+          <a href="#">Privacy</a> · <a href="{% url 'terms' %}">Terms</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
