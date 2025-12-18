@@ -79,7 +79,7 @@
         <aside>
           <div id="tracking" class="card">
             <h3>Track Vehicle</h3>
-            <form onsubmit="event.preventDefault();track()" class="inline">
+            <form id="trackingForm" class="inline">
               <label for="vehicleInput" class="small" style="display: none;">Vehicle ID</label>
               <input type="text" id="vehicleInput" placeholder="Enter booking or vehicle ID" required />
               <button class="btn">Track</button>
@@ -89,7 +89,7 @@
 
           <div class="card" style="margin-top:14px">
             <h3 id="quote">Quick Quote</h3>
-            <form onsubmit="event.preventDefault();getQuote()">
+            <form id="quoteForm">
               <label for="origin" class="small">Pickup</label>
               <input type="text" id="origin" placeholder="City, address" required />
               <label for="destination" class="small">Delivery</label>
@@ -135,7 +135,7 @@
 
       <section id="contact" class="card">
         <h2>Contact & Booking</h2>
-        <form onsubmit="event.preventDefault();submitContact()">
+        <form id="contactForm">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
             <div>
               <label for="name" class="small" style="display: none;">Name</label>
@@ -181,6 +181,23 @@
   </div>
 
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('trackingForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        track();
+      });
+
+      document.getElementById('quoteForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        getQuote();
+      });
+
+      document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        submitContact();
+      });
+    });
+
     function track(){
       const id = document.getElementById('vehicleInput').value.trim();
       const out = document.getElementById('trackResult');
