@@ -4,13 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Logistica - Shipping Company Website Template</title>
+    <title>Bravo - Shipping Company Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -176,7 +176,7 @@
                 <div class="testimonial-item p-4 my-5">
                     <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>
                     <div class="d-flex align-items-end mb-4">
-                        <img class="img-fluid flex-shrink-0" src="{% static 'img/testimonial-5.jpg' %}" style="width: 80px; height: 80px;">
+                        <img class="img-fluid flex-shrink-0" src="{% static 'img/testimonial-5.jpg' %}" style="width: 80px; height: 80px;" alt="Client 1">
                         <div class="ms-4">
                             <h5 class="mb-1">Linda Otieno</h5>
                             <p class="m-0">Supply Chain Coordinator</p>
@@ -260,7 +260,8 @@
                     <p>Stay updated with the latest shipping rates, route updates, logistics insights, and special offers.
                         Join our mailing list and never miss important cargo alerts or industry updates.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <label for="newsletter-email" class="visually-hidden">Your email</label>
+                        <input id="newsletter-email" class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                         <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
                 </div>

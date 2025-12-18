@@ -80,6 +80,7 @@
           <div id="tracking" class="card">
             <h3>Track Vehicle</h3>
             <form onsubmit="event.preventDefault();track()" class="inline">
+              <label for="vehicleInput" class="small" style="display: none;">Vehicle ID</label>
               <input type="text" id="vehicleInput" placeholder="Enter booking or vehicle ID" required />
               <button class="btn">Track</button>
             </form>
@@ -89,13 +90,13 @@
           <div class="card" style="margin-top:14px">
             <h3 id="quote">Quick Quote</h3>
             <form onsubmit="event.preventDefault();getQuote()">
-              <label class="small">Pickup</label>
+              <label for="origin" class="small">Pickup</label>
               <input type="text" id="origin" placeholder="City, address" required />
-              <label class="small">Delivery</label>
+              <label for="destination" class="small">Delivery</label>
               <input type="text" id="destination" placeholder="City, address" required />
-              <label class="small">Weight (kg)</label>
+              <label for="weight" class="small">Weight (kg)</label>
               <input type="text" id="weight" placeholder="e.g. 500" required />
-              <label class="small">Service</label>
+              <label for="service" class="small">Service</label>
               <select id="service"><option>FTL</option><option>LTL</option><option>Reefer</option><option>Expedited</option></select>
               <div style="margin-top:10px;display:flex;gap:8px">
                 <button class="btn">Estimate</button>
@@ -136,10 +137,18 @@
         <h2>Contact & Booking</h2>
         <form onsubmit="event.preventDefault();submitContact()">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-            <input type="text" id="name" placeholder="Your name" required />
-            <input type="email" id="email" placeholder="Email" required />
+            <div>
+              <label for="name" class="small" style="display: none;">Name</label>
+              <input type="text" id="name" placeholder="Your name" required />
+            </div>
+            <div>
+              <label for="email" class="small" style="display: none;">Email</label>
+              <input type="email" id="email" placeholder="Email" required />
+            </div>
           </div>
+          <label for="company" class="small" style="display: none;">Company</label>
           <input type="text" id="company" placeholder="Company (optional)" style="margin-top:10px" />
+          <label for="message" class="small" style="display: none;">Message</label>
           <textarea id="message" rows="4" placeholder="Pickup details, cargo, preferred date" style="margin-top:10px"></textarea>
           <div style="margin-top:10px;display:flex;gap:8px">
             <button class="btn">Send booking request</button>
