@@ -21,6 +21,7 @@
     .cta{display:flex;gap:10px;align-items:center}
     .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;border:none;cursor:pointer}
     .ghost{background:transparent;border:1px solid #e6edf9;padding:10px 14px;border-radius:8px;cursor:pointer}
+    label{display:block;margin-bottom:4px}
     input[type=text],input[type=email],select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ee}
     .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
     .small{font-size:13px;color:var(--muted)}
@@ -79,7 +80,8 @@
         <aside>
           <div id="tracking" class="card">
             <h3>Track Container</h3>
-            <form onsubmit="event.preventDefault();trackContainer()">
+            <form id="trackingForm">
+              <label for="containerInput" class="small">Container number</label>
               <input type="text" id="containerInput" placeholder="Enter container number (e.g. ABCU1234567)" required />
               <div style="margin-top:10px;display:flex;gap:8px"><button class="btn">Track</button><button type="button" class="ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request help</button></div>
             </form>
@@ -88,14 +90,14 @@
 
           <div class="card" style="margin-top:14px">
             <h3 id="quote">Quick Quote</h3>
-            <form onsubmit="event.preventDefault();getQuote()">
-              <label class="small">From (port or city)</label>
+            <form id="quoteForm">
+              <label for="origin" class="small">From (port or city)</label>
               <input type="text" id="origin" placeholder="e.g. Shanghai, CN" required />
-              <label class="small">To (port or city)</label>
+              <label for="destination" class="small" style="margin-top:10px">To (port or city)</label>
               <input type="text" id="destination" placeholder="e.g. Mombasa, KE" required />
-              <label class="small">Cargo weight (kg)</label>
+              <label for="weight" class="small" style="margin-top:10px">Cargo weight (kg)</label>
               <input type="text" id="weight" placeholder="e.g. 1200" required />
-              <label class="small">Container type</label>
+              <label for="ctype" class="small" style="margin-top:10px">Container type</label>
               <select id="ctype"><option>20' GP</option><option>40' GP</option><option>40' HQ</option><option>Other</option></select>
               <div style="margin-top:10px;display:flex;gap:8px">
                 <button class="btn">Estimate</button>
@@ -134,15 +136,27 @@
 
       <section id="contact" class="card">
         <h2>Contact & Booking</h2>
-        <form  method="post" onsubmit="event.preventDefault();submitContact()">
+        <form id="contactForm" method="post">
             {% csrf_token %}
 
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-            <input type="text" id="name" placeholder="Your name" required name="name" />
-            <input type="email" id="email" placeholder="Email" required name="email" />
+            <div>
+              <label for="name" class="small">Your name</label>
+              <input type="text" id="name" placeholder="Your name" required name="name" />
+            </div>
+            <div>
+              <label for="email" class="small">Email</label>
+              <input type="email" id="email" placeholder="Email" required name="email" />
+            </div>
           </div>
-          <input type="text" id="company"  name="company" placeholder="Company (optional)" style="margin-top:10px" />
-          <textarea id="message"  name="message" rows="4" placeholder="Cargo details, preferred sailing, pickup/port info" style="margin-top:10px"></textarea>
+          <div style="margin-top:10px">
+            <label for="company" class="small">Company (optional)</label>
+            <input type="text" id="company"  name="company" placeholder="Company (optional)" />
+          </div>
+          <div style="margin-top:10px">
+            <label for="message" class="small">Message</label>
+            <textarea id="message"  name="message" rows="4" placeholder="Cargo details, preferred sailing, pickup/port info"></textarea>
+          </div>
           <div style="margin-top:10px;display:flex;gap:8px">
             <button class="btn">Send booking request</button>
             <button type="reset" class="ghost">Reset</button>
@@ -198,6 +212,21 @@
       out.textContent = 'Submitting...';
       setTimeout(()=>{out.textContent = 'Thanks — your booking request was received. Our agent will contact you within 1 business day.'},800);
     }
+
+    document.getElementById('trackingForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        trackContainer();
+    });
+
+    document.getElementById('quoteForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        getQuote();
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        submitContact();
+    });
   </script>
 </body>
 </html>
