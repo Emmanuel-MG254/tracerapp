@@ -3,37 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Air Freight — Fast, Reliable Global Shipping</title>
-  <meta name="description" content="Air freight services — international cargo, tracking, rates, and pickup scheduling." />
+  <title>Air Freight — Reliable Air Cargo Shipping</title>
+  <meta name="description" content="Air freight services — express delivery, consolidation, project cargo, shipment tracking, and customs clearance." />
   <style>
-    :root{--accent:#0b6efd;--muted:#6b7280;--card:#ffffff}
+    :root{--accent:#ff6b35;--muted:#6c757d;--card:#ffffff}
     *{box-sizing:border-box}
-    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; color:#0f172a; background:#f8fafc}
-    .container{max-width:1100px;margin:0 auto;padding:28px}
-    header{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    body{font-family:Arial, sans-serif; margin:0; color:#212529; background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80'); background-size:cover; background-attachment:fixed; background-repeat:no-repeat; background-position:center}
+    .container{max-width:1200px;margin:0 auto;padding:28px; background:rgba(255,255,255,0.9); border-radius:12px; margin-top:20px; margin-bottom:20px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:16px 0; background:rgba(255,107,53,0.8); color:white; border-radius:8px}
     .logo{display:flex;align-items:center;gap:12px}
-    .logo .mark{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
-    nav a{margin-left:18px;color:var(--muted);text-decoration:none}
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:18px}
-    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 4px 18px rgba(12,16,20,0.06)}
-    h1{font-size:28px;margin:0 0 10px}
-    p.lead{color:var(--muted);margin:0 0 16px}
+    .logo .mark{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#28a745);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav a{margin-left:18px;color:white;text-decoration:none; font-weight:bold}
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;margin-top:18px}
+    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 4px 18px rgba(0,0,0,0.1); border:1px solid #dee2e6}
+    h1{font-size:32px;margin:0 0 10px; color:var(--accent)}
+    p.lead{color:var(--muted);margin:0 0 16px; font-size:16px}
     .cta{display:flex;gap:10px;align-items:center}
-    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;border:none;cursor:pointer}
-    .ghost{background:transparent;border:1px solid #e6edf9;padding:10px 14px;border-radius:8px;cursor:pointer}
-
-    /* tracking form */
-    form.inline{display:flex;gap:8px}
-    input[type=text],input[type=email],select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ee}
-    .rates{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
-    .small{font-size:13px;color:var(--muted)}
-
-    /* sections */
+    .btn{background:var(--accent);color:white;padding:12px 16px;border-radius:8px;border:none;cursor:pointer; font-weight:bold}
+    .ghost{background:transparent;border:1px solid var(--accent);padding:12px 16px;border-radius:8px;cursor:pointer; color:var(--accent)}
+    label{display:block;margin-bottom:4px; font-weight:600}
+    input[type=text],input[type=email],select,textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #ced4da; font-size:14px}
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+    .small{font-size:14px;color:var(--muted)}
     section{margin-top:28px}
-    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-    footer{margin-top:40px;padding:18px 0;border-top:1px solid #eef2f7;color:var(--muted)}
-
-    /* responsive */
+    footer{margin-top:40px;padding:18px 0;border-top:1px solid #dee2e6;color:var(--muted); background:rgba(255,255,255,0.9); border-radius:8px}
     @media(max-width:880px){.hero{grid-template-columns:1fr}.container{padding:16px}}
   </style>
 </head>
@@ -43,14 +36,14 @@
       <div class="logo">
         <div class="mark">AF</div>
         <div>
-          <strong>BravoAirFreight</strong>
-          <div class="small">Global cargo & express</div>
+          <strong>AirFreight</strong>
+          <div class="small">Bravo Air cargo & logistics</div>
         </div>
       </div>
       <nav>
         <a href="#services">Services</a>
+        <a href="#schedules">Schedules</a>
         <a href="#rates">Rates</a>
-        <a href="#tracking">Tracking</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -59,46 +52,26 @@
       <div class="hero">
         <div>
           <div class="card">
-            <h1>Fast. Secure. Worldwide air freight solutions.</h1>
-            <p class="lead">We handle door-to-door international air cargo for businesses of all sizes — perishable, high-value, oversized, and standard shipments with real-time tracking and customs support.</p>
+            <h1>Efficient air shipping — Express, Consolidation & Project Cargo</h1>
+            <p class="lead">Door-to-door and airport-to-airport air freight with shipment tracking, consolidation services, and customs brokerage across major trade lanes.</p>
             <div class="cta">
-              <button class="btn" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">Get a quote</button>
+              <button class="btn" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">Request a quote</button>
               <button class="ghost" onclick="document.getElementById('tracking').scrollIntoView({behavior:'smooth'})">Track shipment</button>
             </div>
-            <div class="rates">
-              <div class="small card"><strong>Transit time</strong><div class="small">1–5 business days (depending on origin/destination)</div></div>
-              <div class="small card"><strong>Insurance</strong><div class="small">Optional cargo insurance available</div></div>
-              <div class="small card"><strong>Customs</strong><div class="small">Assistance with documentation & clearance</div></div>
+            <div style="margin-top:14px" class="small">
+              <strong>Typical transit</strong> — East Asia to Europe: 2–5 days · East Asia to East Africa: 3–7 days
             </div>
           </div>
 
           <section id="services">
-            <h2>What we ship</h2>
+            <h2>Services</h2>
             <div class="grid-3">
-              <div class="card">
-                <h3>General Cargo</h3>
-                <p class="small">Palletized and loose cargo with door-to-airport and airport-to-door options.</p>
-              </div>
-              <div class="card">
-                <h3>Perishables</h3>
-                <p class="small">Temperature-controlled handling for food and pharmaceuticals.</p>
-              </div>
-              <div class="card">
-                <h3>Express & Documents</h3>
-                <p class="small">Small parcels and documents — fast customs clearance.</p>
-              </div>
-              <div class="card">
-                <h3>Oversized & Heavy</h3>
-                <p class="small">Project cargo solutions with special handling equipment.</p>
-              </div>
-              <div class="card">
-                <h3>Dangerous Goods</h3>
-                <p class="small">IATA-compliant handling and paperwork (restricted items handled case-by-case).</p>
-              </div>
-              <div class="card">
-                <h3>Customs Brokerage</h3>
-                <p class="small">Full customs clearance and documentation management.</p>
-              </div>
+              <div class="card"><h3>Express Air Freight</h3><p class="small">Fast delivery for urgent shipments with priority handling.</p></div>
+              <div class="card"><h3>Consolidation Services</h3><p class="small">Group small shipments into efficient air cargo loads.</p></div>
+              <div class="card"><h3>Project & Oversized Cargo</h3><p class="small">Specialized handling for heavy or bulky items via air.</p></div>
+              <div class="card"><h3>Customs & Compliance</h3><p class="small">Import/export documentation, duties, and clearance support.</p></div>
+              <div class="card"><h3>Warehousing & Distribution</h3><p class="small">Short-term storage and last-mile delivery.</p></div>
+              <div class="card"><h3>Insurance</h3><p class="small">Cargo insurance for air and ground transport.</p></div>
             </div>
           </section>
 
@@ -107,27 +80,28 @@
         <aside>
           <div id="tracking" class="card">
             <h3>Track Shipment</h3>
-            <form onsubmit="event.preventDefault();track()" class="inline">
-              <input type="text" id="trackingInput" placeholder="Enter airway bill / tracking #" required />
-              <button class="btn">Track</button>
+            <form id="trackingForm">
+              <label for="containerInput" class="small">AWB or Shipment number</label>
+              <input type="text" id="containerInput" placeholder="Enter AWB (e.g. 123-45678901)" required />
+              <div style="margin-top:10px;display:flex;gap:8px"><button class="btn">Track</button><button type="button" class="ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request help</button></div>
             </form>
             <div id="trackResult" class="small" style="margin-top:12px"></div>
           </div>
 
           <div class="card" style="margin-top:14px">
             <h3 id="quote">Quick Quote</h3>
-            <form onsubmit="event.preventDefault();getQuote()">
-              <label class="small">Origin</label>
-              <input type="text" id="origin" placeholder="City, Country" required />
-              <label class="small">Destination</label>
-              <input type="text" id="destination" placeholder="City, Country" required />
-              <label class="small">Weight (kg)</label>
-              <input type="text" id="weight" placeholder="e.g. 12.5" required />
-              <label class="small">Dimensions (L×W×H cm)</label>
-              <input type="text" id="dims" placeholder="e.g. 40×30×20" />
+            <form id="quoteForm">
+              <label for="origin" class="small">From (airport or city)</label>
+              <input type="text" id="origin" placeholder="e.g. Shanghai, CN" required />
+              <label for="destination" class="small" style="margin-top:10px">To (airport or city)</label>
+              <input type="text" id="destination" placeholder="e.g. Nairobi, KE" required />
+              <label for="weight" class="small" style="margin-top:10px">Cargo weight (kg)</label>
+              <input type="text" id="weight" placeholder="e.g. 500" required />
+              <label for="ctype" class="small" style="margin-top:10px">Service type</label>
+              <select id="ctype"><option>Express</option><option>Standard</option><option>Consolidated</option><option>Other</option></select>
               <div style="margin-top:10px;display:flex;gap:8px">
-                <button class="btn">Get estimate</button>
-                <button type="button" class="ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact us</button>
+                <button class="btn">Estimate</button>
+                <button type="button" class="ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact agent</button>
               </div>
             </form>
             <div id="quoteResult" class="small" style="margin-top:12px"></div>
@@ -135,33 +109,57 @@
         </aside>
       </div>
 
-      <section id="rates" class="card">
-        <h2>Sample Rates</h2>
-        <p class="small">Indicative rates — actual price depends on route, weight/volume, and service level.</p>
+      <section id="schedules" class="card">
+        <h2>Sample Schedules</h2>
+        <p class="small">Daily flights on major routes. Contact us for exact flight times.</p>
         <table style="width:100%;border-collapse:collapse;margin-top:12px">
           <thead>
-            <tr style="text-align:left;color:var(--muted)"><th>Route</th><th>Service</th><th>From (kg)</th><th>Transit</th><th>Est. price</th></tr>
+            <tr style="text-align:left;color:var(--muted)"><th>Route</th><th>Frequency</th><th>Transit (est.)</th><th>Notes</th></tr>
           </thead>
           <tbody>
-            <tr><td>Nairobi → London</td><td>Standard</td><td>1</td><td>2–4 days</td><td>USD 5.90 / kg</td></tr>
-            <tr><td>Shanghai → New York</td><td>Express</td><td>1</td><td>1–3 days</td><td>USD 8.50 / kg</td></tr>
-            <tr><td>Dubai → Johannesburg</td><td>Standard</td><td>1</td><td>2–3 days</td><td>USD 4.20 / kg</td></tr>
+            <tr><td>Shanghai → Frankfurt</td><td>Daily</td><td>12–18 hours</td><td>Direct flights available</td></tr>
+            <tr><td>Shanghai → Nairobi</td><td>Daily</td><td>14–20 hours</td><td>With connections</td></tr>
+            <tr><td>Dubai → Johannesburg</td><td>Daily</td><td>8–12 hours</td><td>Direct service</td></tr>
           </tbody>
         </table>
       </section>
 
+      <section id="rates" class="card">
+        <h2>Indicative Rates</h2>
+        <p class="small">Rates are sample estimates. Final charges depend on weight, dimensions, and destination fees.</p>
+        <div class="grid-3" style="margin-top:12px">
+          <div class="card"><strong>Shanghai → Frankfurt</strong><div class="small">From USD 5 / kg (est.)</div></div>
+          <div class="card"><strong>Shanghai → Nairobi</strong><div class="small">From USD 6 / kg (est.)</div></div>
+          <div class="card"><strong>Dubai → Johannesburg</strong><div class="small">From USD 4 / kg (est.)</div></div>
+        </div>
+      </section>
+
       <section id="contact" class="card">
-        <h2>Contact & Pickup Request</h2>
-        <form onsubmit="event.preventDefault();submitContact()">
+        <h2>Contact & Booking</h2>
+        <form id="contactForm" method="post">
+            {% csrf_token %}
+
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-            <input type="text" id="name" placeholder="Your name" required />
-            <input type="email" id="email" placeholder="Email" required />
+            <div>
+              <label for="name" class="small">Your name</label>
+              <input type="text" id="name" placeholder="Your name" required name="name" />
+            </div>
+            <div>
+              <label for="email" class="small">Email</label>
+              <input type="email" id="email" placeholder="Email" required name="email" />
+            </div>
           </div>
-          <input type="text" id="company" placeholder="Company (optional)" style="margin-top:10px" />
-          <textarea id="message" rows="4" placeholder="Pickup address, shipment details, preferred date" style="margin-top:10px"></textarea>
+          <div style="margin-top:10px">
+            <label for="company" class="small">Company (optional)</label>
+            <input type="text" id="company"  name="company" placeholder="Company (optional)" />
+          </div>
+          <div style="margin-top:10px">
+            <label for="message" class="small">Message</label>
+            <textarea id="message"  name="message" rows="4" placeholder="Cargo details, preferred flight, pickup/airport info"></textarea>
+          </div>
           <div style="margin-top:10px;display:flex;gap:8px">
-            <button class="btn">Send request</button>
-            <button type="reset" class="ghost">Reset</button>
+            <button class="btn">Send booking request</button>
+            
           </div>
         </form>
         <div id="contactResult" class="small" style="margin-top:12px"></div>
@@ -170,12 +168,12 @@
       <section class="card">
         <h2>FAQ</h2>
         <div class="small">
-          <strong>How long does transit take?</strong>
-          <p>Typical transit is 1–5 business days depending on origin and destination and chosen service.</p>
-          <strong>Can you handle hazardous goods?</strong>
-          <p>Yes, when packaged and documented to IATA rules. Contact us with details.</p>
-          <strong>Do you offer customs brokerage?</strong>
-          <p>Yes — we can clear shipments and advise on duties and taxes.</p>
+          <strong>What is express vs standard air freight?</strong>
+          <p>Express offers faster delivery with higher priority. Standard is cost-effective for non-urgent cargo.</p>
+          <strong>How are transit times calculated?</strong>
+          <p>Transit includes flight time only; allow additional time for airport handling and customs.</p>
+          <strong>Do you provide ground transport?</strong>
+          <p>Yes — we can arrange pickup and delivery to/from airports.</p>
         </div>
       </section>
 
@@ -183,22 +181,19 @@
 
     <footer>
       <div style="display:flex;justify-content:space-between;align-items:center">
-        <div class="small">© Bravo AirFreight • Built with care</div>
-        <div class="small">Support: Bravo@airfreight.com</div>
+        <div class="small">©Bravo AirFreight • Safe air cargo shipping</div>
+        <div class="small">Support: Bravo@airfreight.example</div>
       </div>
     </footer>
   </div>
 
   <script>
-    function track(){
-      const id = document.getElementById('trackingInput').value.trim();
+    function trackContainer(){
+      const id = document.getElementById('containerInput').value.trim();
       const out = document.getElementById('trackResult');
-      if(!id){out.textContent='Please enter a tracking number.';return}
-      // Demo response — replace with real API call
-      out.textContent = 'Looking up ' + id + '...';
-      setTimeout(()=>{
-        out.innerHTML = '<strong>Status:</strong> In transit<br><strong>Last known:</strong> Departed origin airport';
-      },600);
+      if(!id){out.textContent='Please enter an AWB number.';return}
+      out.textContent = 'Checking shipment ' + id + '...';
+      setTimeout(()=>{out.innerHTML = '<strong>Status:</strong> In transit<br><strong>Last location:</strong> Departed Dubai';},600);
     }
 
     function getQuote(){
@@ -207,17 +202,32 @@
       const w = parseFloat(document.getElementById('weight').value)||0;
       const out = document.getElementById('quoteResult');
       if(!o||!d||w<=0){out.textContent='Please fill origin, destination and a valid weight.';return}
-      // Simple volume/weight based demo calculation
-      const base = 4.5; // USD/kg sample
+      const base = 5; // sample USD per kg for air
       const est = (base * w).toFixed(2);
-      out.innerHTML = 'Estimated freight: <strong>USD ' + est + '</strong> (approx)';
+      out.innerHTML = 'Estimated air freight: <strong>USD ' + est + '</strong> (approx)';
     }
 
     function submitContact(){
       const out = document.getElementById('contactResult');
-      out.textContent = 'Sending request...';
-      setTimeout(()=>{out.textContent = 'Thanks — we received your request and will be in touch within 1 business day.'},800);
+      out.textContent = 'Submitting...';
+      setTimeout(()=>{out.textContent = 'Thanks — your booking request was received. Our agent will contact you within 1 business day.';
+      document.getElementById('contactForm').reset();},800);
     }
+
+    document.getElementById('trackingForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        trackContainer();
+    });
+
+    document.getElementById('quoteForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        getQuote();
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        submitContact();
+    });
   </script>
 </body>
 </html>

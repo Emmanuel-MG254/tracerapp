@@ -3,29 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Road Freight — Reliable Land Transport</title>
-  <meta name="description" content="Road freight services — full truckload (FTL), less-than-truckload (LTL), regional distribution, and last-mile delivery." />
+  <title>Road Freight — Reliable Land Transportation</title>
+  <meta name="description" content="Road freight services — FTL, LTL, project cargo, shipment tracking, and customs clearance." />
   <style>
-    :root{--accent:#d97706;--muted:#6b7280;--card:#ffffff}
+    :root{--accent:#28a745;--muted:#6c757d;--card:#ffffff}
     *{box-sizing:border-box}
-    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; margin:0; color:#0f172a; background:#fffaf5}
-    .container{max-width:1100px;margin:0 auto;padding:28px}
-    header{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    body{font-family:Arial, sans-serif; margin:0; color:#212529; background-image:url('https://images.unsplash.com/photo-1566492031773-4f4e44671d66?auto=format&fit=crop&w=1950&q=80'); background-size:cover; background-attachment:fixed; background-repeat:no-repeat; background-position:center}
+    .container{max-width:1200px;margin:0 auto;padding:28px; background:rgba(255,255,255,0.9); border-radius:12px; margin-top:20px; margin-bottom:20px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:16px 0; background:rgba(40,167,69,0.8); color:white; border-radius:8px}
     .logo{display:flex;align-items:center;gap:12px}
-    .logo .mark{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#fb923c);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
-    nav a{margin-left:18px;color:var(--muted);text-decoration:none}
+    .logo .mark{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#007bff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav a{margin-left:18px;color:white;text-decoration:none; font-weight:bold}
     .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;margin-top:18px}
-    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 4px 18px rgba(12,16,20,0.06)}
-    h1{font-size:28px;margin:0 0 10px}
-    p.lead{color:var(--muted);margin:0 0 16px}
+    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 4px 18px rgba(0,0,0,0.1); border:1px solid #dee2e6}
+    h1{font-size:32px;margin:0 0 10px; color:var(--accent)}
+    p.lead{color:var(--muted);margin:0 0 16px; font-size:16px}
     .cta{display:flex;gap:10px;align-items:center}
-    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;border:none;cursor:pointer}
-    .ghost{background:transparent;border:1px solid #fbe7d2;padding:10px 14px;border-radius:8px;cursor:pointer}
-    input[type=text],input[type=email],select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #f0e6da}
-    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-    .small{font-size:13px;color:var(--muted)}
+    .btn{background:var(--accent);color:white;padding:12px 16px;border-radius:8px;border:none;cursor:pointer; font-weight:bold}
+    .ghost{background:transparent;border:1px solid var(--accent);padding:12px 16px;border-radius:8px;cursor:pointer; color:var(--accent)}
+    label{display:block;margin-bottom:4px; font-weight:600}
+    input[type=text],input[type=email],select,textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #ced4da; font-size:14px}
+    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+    .small{font-size:14px;color:var(--muted)}
     section{margin-top:28px}
-    footer{margin-top:40px;padding:18px 0;border-top:1px solid #fff1e0;color:var(--muted)}
+    footer{margin-top:40px;padding:18px 0;border-top:1px solid #dee2e6;color:var(--muted); background:rgba(255,255,255,0.9); border-radius:8px}
     @media(max-width:880px){.hero{grid-template-columns:1fr}.container{padding:16px}}
   </style>
 </head>
@@ -35,13 +36,15 @@
       <div class="logo">
         <div class="mark">RF</div>
         <div>
-          <strong> BravoRoadFreight</strong>
-          <div class="small">Regional & long-haul trucking</div>
+          <strong>RoadFreight</strong>
+          <div class="small">Bravo Land transport & logistics</div>
         </div>
       </div>
       <nav>
-        <a href="{% url 'services' %}">Services</a>
-        <a href="{% url 'contact' %}">Contact</a>
+        <a href="#services">Services</a>
+        <a href="#schedules">Schedules</a>
+        <a href="#rates">Rates</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
@@ -49,28 +52,26 @@
       <div class="hero">
         <div>
           <div class="card">
-            <h1>Fast, safe road freight — FTL & LTL solutions</h1>
-            <p class="lead">Comprehensive land transport across cities and borders — full truckloads, palletised LTL, temperature-controlled vans, and last-mile delivery with live GPS tracking.</p>
+            <h1>Efficient land shipping — FTL, LTL & Project Cargo</h1>
+            <p class="lead">Door-to-door and depot-to-depot road freight with shipment tracking, consolidation services, and customs brokerage across regional routes.</p>
             <div class="cta">
-              <button class="btn" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">Get a quote</button>
-              <button class="ghost" onclick="document.getElementById('tracking').scrollIntoView({behavior:'smooth'})">Track vehicle</button>
+              <button class="btn" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">Request a quote</button>
+              <button class="ghost" onclick="document.getElementById('tracking').scrollIntoView({behavior:'smooth'})">Track shipment</button>
             </div>
-            <div class="grid-3" style="margin-top:16px">
-              <div class="card small"><strong>Guaranteed slots</strong><div class="small">Flexible departure times and guaranteed capacity for contracts.</div></div>
-              <div class="card small"><strong>Security</strong><div class="small">Sealed trailers and cargo insurance options.</div></div>
-              <div class="card small"><strong>Cross-border</strong><div class="small">Customs and transit documentation support.</div></div>
+            <div style="margin-top:14px" class="small">
+              <strong>Typical transit</strong> — Europe to Asia: 5–10 days · East Africa regional: 2–5 days
             </div>
           </div>
 
           <section id="services">
             <h2>Services</h2>
             <div class="grid-3">
-              <div class="card"><h3>FTL (Full Truck Load)</h3><p class="small">Dedicated trucks for large shipments and time-sensitive cargo.</p></div>
-              <div class="card"><h3>LTL (Less than Truck Load)</h3><p class="small">Cost-effective consolidation for smaller shipments and pallets.</p></div>
-              <div class="card"><h3>Temperature-Controlled</h3><p class="small">Refrigerated trucks for perishables and pharmaceuticals.</p></div>
-              <div class="card"><h3>Expedited</h3><p class="small">Same-day / next-day regional rush deliveries.</p></div>
-              <div class="card"><h3>White-Glove</h3><p class="small">Special handling for fragile or high-value goods with installation.</p></div>
-              <div class="card"><h3>Warehouse & Cross-Dock</h3><p class="small">Short-term storage and consolidation services.</p></div>
+              <div class="card"><h3>FTL (Full Truck Load)</h3><p class="small">Dedicated trucks for large shipments with direct routing.</p></div>
+              <div class="card"><h3>LTL (Less than Truck Load)</h3><p class="small">Consolidation for smaller loads with shared transport.</p></div>
+              <div class="card"><h3>Project & Oversized Cargo</h3><p class="small">Specialized vehicles for heavy or bulky items.</p></div>
+              <div class="card"><h3>Customs & Compliance</h3><p class="small">Border crossing assistance and documentation.</p></div>
+              <div class="card"><h3>Warehousing & Distribution</h3><p class="small">Storage and last-mile delivery.</p></div>
+              <div class="card"><h3>Insurance</h3><p class="small">Cargo insurance for road transport.</p></div>
             </div>
           </section>
 
@@ -78,11 +79,11 @@
 
         <aside>
           <div id="tracking" class="card">
-            <h3>Track Vehicle</h3>
-            <form id="trackingForm" class="inline">
-              <label for="vehicleInput" class="small" style="display: none;">Vehicle ID</label>
-              <input type="text" id="vehicleInput" placeholder="Enter booking or vehicle ID" required />
-              <button class="btn">Track</button>
+            <h3>Track Shipment</h3>
+            <form id="trackingForm">
+              <label for="containerInput" class="small">Shipment number</label>
+              <input type="text" id="containerInput" placeholder="Enter shipment number (e.g. RF123456)" required />
+              <div style="margin-top:10px;display:flex;gap:8px"><button class="btn">Track</button><button type="button" class="ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request help</button></div>
             </form>
             <div id="trackResult" class="small" style="margin-top:12px"></div>
           </div>
@@ -90,17 +91,17 @@
           <div class="card" style="margin-top:14px">
             <h3 id="quote">Quick Quote</h3>
             <form id="quoteForm">
-              <label for="origin" class="small">Pickup</label>
-              <input type="text" id="origin" placeholder="City, address" required />
-              <label for="destination" class="small">Delivery</label>
-              <input type="text" id="destination" placeholder="City, address" required />
-              <label for="weight" class="small">Weight (kg)</label>
-              <input type="text" id="weight" placeholder="e.g. 500" required />
-              <label for="service" class="small">Service</label>
-              <select id="service"><option>FTL</option><option>LTL</option><option>Reefer</option><option>Expedited</option></select>
+              <label for="origin" class="small">From (city or depot)</label>
+              <input type="text" id="origin" placeholder="e.g. Nairobi, KE" required />
+              <label for="destination" class="small" style="margin-top:10px">To (city or depot)</label>
+              <input type="text" id="destination" placeholder="e.g. Kampala, UG" required />
+              <label for="weight" class="small" style="margin-top:10px">Cargo weight (kg)</label>
+              <input type="text" id="weight" placeholder="e.g. 2000" required />
+              <label for="ctype" class="small" style="margin-top:10px">Load type</label>
+              <select id="ctype"><option>FTL</option><option>LTL</option><option>Oversized</option><option>Other</option></select>
               <div style="margin-top:10px;display:flex;gap:8px">
                 <button class="btn">Estimate</button>
-                <button type="button" class="ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</button>
+                <button type="button" class="ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact agent</button>
               </div>
             </form>
             <div id="quoteResult" class="small" style="margin-top:12px"></div>
@@ -108,51 +109,57 @@
         </aside>
       </div>
 
-      <section id="coverage" class="card">
-        <h2>Coverage</h2>
-        <p class="small">Nationwide coverage with cross-border routes into neighbouring countries. Regional hubs in major cities for fast redistribution.</p>
-        <div class="grid-3" style="margin-top:12px">
-          <div class="card"><strong>Urban distribution</strong><div class="small">Same-day deliveries inside metro areas.</div></div>
-          <div class="card"><strong>Regional haul</strong><div class="small">Night-run services and scheduled departures.</div></div>
-          <div class="card"><strong>Cross-border</strong><div class="small">Door-to-door delivery with customs handling.</div></div>
-        </div>
-      </section>
-
-      <section id="rates" class="card">
-        <h2>Sample Rates</h2>
-        <p class="small">Indicative prices — final quote depends on distance, weight/volume, and service level.</p>
+      <section id="schedules" class="card">
+        <h2>Sample Schedules</h2>
+        <p class="small">Regular departures on major routes. Contact us for exact truck schedules.</p>
         <table style="width:100%;border-collapse:collapse;margin-top:12px">
           <thead>
-            <tr style="text-align:left;color:var(--muted)"><th>Route</th><th>Service</th><th>From (kg)</th><th>Transit</th><th>Est. price</th></tr>
+            <tr style="text-align:left;color:var(--muted)"><th>Route</th><th>Frequency</th><th>Transit (est.)</th><th>Notes</th></tr>
           </thead>
           <tbody>
-            <tr><td>Nairobi → Kampala</td><td>FTL</td><td>1000</td><td>1 day</td><td>USD 480 / truck</td></tr>
-            <tr><td>Nairobi → Mombasa</td><td>LTL</td><td>1</td><td>1 day</td><td>USD 0.65 / kg</td></tr>
-            <tr><td>Nairobi → Dar es Salaam</td><td>FTL</td><td>1000</td><td>2–3 days</td><td>USD 900 / truck</td></tr>
+            <tr><td>Nairobi → Kampala</td><td>Daily</td><td>2–3 days</td><td>Direct route</td></tr>
+            <tr><td>Nairobi → Dar es Salaam</td><td>Bi-weekly</td><td>4–6 days</td><td>Via Arusha</td></tr>
+            <tr><td>Johannesburg → Harare</td><td>Weekly</td><td>3–5 days</td><td>Border crossings included</td></tr>
           </tbody>
         </table>
       </section>
 
+      <section id="rates" class="card">
+        <h2>Indicative Rates</h2>
+        <p class="small">Rates are sample estimates. Final charges depend on distance, weight, and surcharges.</p>
+        <div class="grid-3" style="margin-top:12px">
+          <div class="card"><strong>Nairobi → Kampala</strong><div class="small">From USD 2 / kg (est.)</div></div>
+          <div class="card"><strong>Nairobi → Dar es Salaam</strong><div class="small">From USD 1.5 / kg (est.)</div></div>
+          <div class="card"><strong>Johannesburg → Harare</strong><div class="small">From USD 1.8 / kg (est.)</div></div>
+        </div>
+      </section>
+
       <section id="contact" class="card">
         <h2>Contact & Booking</h2>
-        <form id="contactForm">
+        <form id="contactForm" method="post">
+            {% csrf_token %}
+
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
             <div>
-              <label for="name" class="small" style="display: none;">Name</label>
-              <input type="text" id="name" placeholder="Your name" required />
+              <label for="name" class="small">Your name</label>
+              <input type="text" id="name" placeholder="Your name" required name="name" />
             </div>
             <div>
-              <label for="email" class="small" style="display: none;">Email</label>
-              <input type="email" id="email" placeholder="Email" required />
+              <label for="email" class="small">Email</label>
+              <input type="email" id="email" placeholder="Email" required name="email" />
             </div>
           </div>
-          <label for="company" class="small" style="display: none;">Company</label>
-          <input type="text" id="company" placeholder="Company (optional)" style="margin-top:10px" />
-          <label for="message" class="small" style="display: none;">Message</label>
-          <textarea id="message" rows="4" placeholder="Pickup details, cargo, preferred date" style="margin-top:10px"></textarea>
+          <div style="margin-top:10px">
+            <label for="company" class="small">Company (optional)</label>
+            <input type="text" id="company"  name="company" placeholder="Company (optional)" />
+          </div>
+          <div style="margin-top:10px">
+            <label for="message" class="small">Message</label>
+            <textarea id="message"  name="message" rows="4" placeholder="Cargo details, preferred route, pickup/depot info"></textarea>
+          </div>
           <div style="margin-top:10px;display:flex;gap:8px">
             <button class="btn">Send booking request</button>
-            <button type="reset" class="ghost">Reset</button>
+            
           </div>
         </form>
         <div id="contactResult" class="small" style="margin-top:12px"></div>
@@ -161,12 +168,12 @@
       <section class="card">
         <h2>FAQ</h2>
         <div class="small">
-          <strong>How do I track a shipment?</strong>
-          <p>Use your booking or vehicle ID in the tracker. For live GPS updates, request tracking when booking.</p>
-          <strong>What paperwork is required for cross-border?</strong>
-          <p>Commercial invoice, packing list, and any required permits. We can assist with documentation.</p>
-          <strong>Do you offer pallet handling?</strong>
-          <p>Yes — standard pallet pick-up, stacking and secure lashing included for FTL/LTL.</p>
+          <strong>What is FTL vs LTL?</strong>
+          <p>FTL = full truck load for exclusive use. LTL = shared truck space for smaller shipments.</p>
+          <strong>How are transit times calculated?</strong>
+          <p>Transit includes driving time; allow for border delays and loading/unloading.</p>
+          <strong>Do you handle international borders?</strong>
+          <p>Yes — we manage customs and permits for cross-border transport.</p>
         </div>
       </section>
 
@@ -174,36 +181,19 @@
 
     <footer>
       <div style="display:flex;justify-content:space-between;align-items:center">
-        <div class="small">© Bravo RoadFreight • Land transport specialists</div>
-        <div class="small">Support: bravo@roadfreight.com</div>
+        <div class="small">©Bravo RoadFreight • Safe land transportation</div>
+        <div class="small">Support: Bravo@roadfreight.example</div>
       </div>
     </footer>
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      document.getElementById('trackingForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-        track();
-      });
-
-      document.getElementById('quoteForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-        getQuote();
-      });
-
-      document.getElementById('contactForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-        submitContact();
-      });
-    });
-
-    function track(){
-      const id = document.getElementById('vehicleInput').value.trim();
+    function trackContainer(){
+      const id = document.getElementById('containerInput').value.trim();
       const out = document.getElementById('trackResult');
-      if(!id){out.textContent='Please enter a booking or vehicle ID.';return}
-      out.textContent = 'Locating ' + id + '...';
-      setTimeout(()=>{out.innerHTML = '<strong>Status:</strong> En route<br><strong>ETA:</strong> 5 hours';},600);
+      if(!id){out.textContent='Please enter a shipment number.';return}
+      out.textContent = 'Checking shipment ' + id + '...';
+      setTimeout(()=>{out.innerHTML = '<strong>Status:</strong> In transit<br><strong>Last location:</strong> Departed Nairobi depot';},600);
     }
 
     function getQuote(){
@@ -211,17 +201,33 @@
       const d = document.getElementById('destination').value.trim();
       const w = parseFloat(document.getElementById('weight').value)||0;
       const out = document.getElementById('quoteResult');
-      if(!o||!d||w<=0){out.textContent='Please fill pickup, delivery and a valid weight.';return}
-      const ratePerKg = document.getElementById('service').value === 'FTL' ? 0.5 : 0.85;
-      const est = (ratePerKg * w).toFixed(2);
+      if(!o||!d||w<=0){out.textContent='Please fill origin, destination and a valid weight.';return}
+      const base = 2; // sample USD per kg for road
+      const est = (base * w).toFixed(2);
       out.innerHTML = 'Estimated road freight: <strong>USD ' + est + '</strong> (approx)';
     }
 
     function submitContact(){
       const out = document.getElementById('contactResult');
-      out.textContent = 'Submitting request...';
-      setTimeout(()=>{out.textContent = 'Thanks — we received your booking request. An agent will contact you within 1 business day.'},800);
+      out.textContent = 'Submitting...';
+      setTimeout(()=>{out.textContent = 'Thanks — your booking request was received. Our agent will contact you within 1 business day.';
+      document.getElementById('contactForm').reset();},800);
     }
+
+    document.getElementById('trackingForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        trackContainer();
+    });
+
+    document.getElementById('quoteForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        getQuote();
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        submitContact();
+    });
   </script>
 </body>
 </html>

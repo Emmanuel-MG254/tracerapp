@@ -17,6 +17,7 @@ urlpatterns = [
     path('terms',views.terms,name='terms'),
     path('logistics/',views.logistics,name='logistics'),
     path('support/',views.support,name='support')
+    
 
 
 ]

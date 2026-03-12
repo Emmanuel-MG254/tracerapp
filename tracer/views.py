@@ -75,3 +75,4 @@ def logistics(request):
 def support(request):
     return render(request,'support.html')
 
+
